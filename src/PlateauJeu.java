@@ -41,7 +41,7 @@ public class PlateauJeu {
 	public boolean placerBateau(int tailleBateau,String direction,int pos1,int pos2)
 	{
 		System.out.println("onest dedans "+pos1+pos2+tailleBateau+direction+this.nbBateau);
-		if(nbBateau<2)
+		if(nbBateau<5)
 		{
 			
 			if(direction.equals("V"))
@@ -81,7 +81,7 @@ public class PlateauJeu {
 	{
 		x-=1;
 		y-=1;
-		if(x>0 && x<11 && y>0 && y<11)
+		if(x>=0 && x<11 && y>=0 && y<11)
 		{
 			if(plateau[x][y] == "[-]")
 			{

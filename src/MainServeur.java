@@ -12,7 +12,7 @@ public class MainServeur {
 		
 		System.setSecurityManager(new SecurityManager());
 
-		System.setProperty("java.rmi.server.hostname","127.0.0.1"); 
+		System.setProperty("java.rmi.server.hostname","10.10.184.132"); 
 		LocateRegistry.createRegistry(42000);
 		/**
 		 * Création du plateau de jeu, puis demande d'initialisation de la position des bateaux
@@ -25,7 +25,7 @@ public class MainServeur {
 		
 		
 		Game server	=	new Game(plateauServeur); 
-		Naming.rebind("rmi://127.0.0.1:42000/ABC",server); 
+		Naming.rebind("rmi://10.10.184.132:42000/ABC",server); 
 		
 		System.out.println("Votre Plateau est prêt, en attente de connexion d'un autre joueur");
 		plateauServeur.afficherPlateau();
@@ -34,7 +34,7 @@ public class MainServeur {
 	}
 	public static boolean creationBateau(){
 		int limiteBateau = plateauServeur.getNbBateau();
-		if (limiteBateau < 5)
+		if (limiteBateau < 1)
 		{
 			System.out.println("Selectionnés la taille de votre bateau (on évite de tricher, entre 3 et 5 svp !!) "); 
 			Scanner	taille	= new Scanner(System.in); 
@@ -54,3 +54,4 @@ public class MainServeur {
 		
 	}
 }
+

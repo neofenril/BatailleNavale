@@ -21,7 +21,7 @@ public class MainClient {
 			continueCreation = creationBateau();
 		}
 		GameInterface client = new Game(plateauClient); 
-		GameInterface server = (GameInterface)Naming.lookup("rmi://127.0.0.1:42000/ABC"); 
+		GameInterface server = (GameInterface)Naming.lookup("rmi://10.10.184.132:42000/ABC"); 
 		client.setAdversaire(server);
 		server.setAdversaire(client); 
 		server.aToi();
@@ -30,7 +30,7 @@ public class MainClient {
 
 	public static boolean creationBateau(){
 		int limiteBateau = plateauClient.getNbBateau();
-		if (limiteBateau < 5)
+		if (limiteBateau < 1)
 		{
 			System.out.println("Selectionnés la taille de votre bateau (on évite de tricher, entre 3 et 5 svp !!) "); 
 			Scanner	taille	= new Scanner(System.in); 
